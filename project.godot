@@ -10,12 +10,55 @@ config_version=5
 
 [application]
 
-config/name="sink"
+config/name="Sink"
 run/main_scene="res://zaft/game/scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://zaft/lib/audio/resources/default_bus_layout.tres"
+
+[autoload]
+
+__z="*res://zaft/lib/autoload/all.gd"
+
+[debug]
+
+gdscript/warnings/unused_signal=0
+
+[display]
+
+window/size/viewport_width=1366
+window/size/viewport_height=768
+window/stretch/mode="viewport"
+
+[editor]
+
+naming/scene_name_casing=3
+naming/script_name_casing=3
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://game/": "purple",
+"res://lib/": "red",
+"res://sink/": "black",
+"res://template/": "teal",
+"res://test/": "pink",
+"res://zaft/game/": "purple",
+"res://zaft/lib/": "red",
+"res://zaft/sink/": "black",
+"res://zaft/template/": "teal",
+"res://zaft/test/": "pink"
+}
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.129412, 0.113725, 0.219608, 1)
+viewport/hdr_2d=true
+environment/defaults/default_environment="res://zaft/lib/config/environment/default-world-environment.tres"
