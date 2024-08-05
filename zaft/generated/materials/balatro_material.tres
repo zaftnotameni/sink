@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/balatro.gdshader" id="1_effum"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_effum")
+shader_parameter/parallax_strength = 0.001
+shader_parameter/parallax_offset = Vector2(0, 0)
+shader_parameter/polar_coordinates = false
+shader_parameter/polar_center = Vector2(0.5, 0.5)
+shader_parameter/polar_zoom = 1.0
+shader_parameter/polar_repeat = 1.0
+shader_parameter/spin_rotation = 0.3
+shader_parameter/spin_speed = 1.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(0.192, 0.106, 0.153, 1)
+shader_parameter/colour_2 = Color(0.231, 0.149, 0.192, 1)
+shader_parameter/colour_3 = Color(0.18, 0.05, 0.173, 1)
+shader_parameter/contrast = 2.5
+shader_parameter/spin_amount = 0.36
+shader_parameter/pixel_filter = 700.0

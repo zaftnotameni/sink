@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/starfieldv2.gdshader" id="1_50268"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_50268")
+shader_parameter/parallax_offset = Vector2(0, 0)
+shader_parameter/parallax_strength = Vector2(0, 0)
+shader_parameter/anim_speed = 0.0
+shader_parameter/star_brightness = 0.05
+shader_parameter/dust = 0.125
+shader_parameter/dist_fade = 0.35
+shader_parameter/pixelation = 1000.0
+shader_parameter/quantization_levels = 256
+shader_parameter/dust_color = Color(0, 0.055, 0.075, 1)
+shader_parameter/saturation = 1.0
+shader_parameter/layers = 7.0
+shader_parameter/iterations = 12

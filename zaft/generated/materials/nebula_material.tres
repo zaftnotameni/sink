@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/nebula.gdshader" id="1_iebpt"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_iebpt")
+shader_parameter/parallax_strength = 0.001
+shader_parameter/parallax_offset = Vector2(0, 0)
+shader_parameter/parallax_auto = Vector2(0, 0)

@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/holo2d.gdshader" id="1_4fmop"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_4fmop")
+shader_parameter/baseColor = Color(0.3058, 0.835, 0.96, 1)
+shader_parameter/speed = 0.5
+shader_parameter/linesColor = Color(0.633232, 0.910156, 0.555693, 1)
+shader_parameter/linesColorIntensity = 5.0
+shader_parameter/hologramTextureTiling = Vector2(1, 5)

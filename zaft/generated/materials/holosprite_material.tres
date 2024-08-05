@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/holosprite.gdshader" id="1_70dvm"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_70dvm")
+shader_parameter/lines = 100
+shader_parameter/color1 = Color(0, 0, 1, 1)
+shader_parameter/color2 = Color(1, 0, 0, 1)
+shader_parameter/speed = 0.4
+shader_parameter/alpha = 0.5
+shader_parameter/noise_amount = 0.05
+shader_parameter/effect_factor = 0.4

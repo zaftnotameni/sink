@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/watery-proc-voronoi.gdshader" id="1_t0gge"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_t0gge")
+shader_parameter/OCTAVE = 6
+shader_parameter/mulscale = 5.0
+shader_parameter/height = 0.6
+shader_parameter/tide = 0.1
+shader_parameter/foamthickness = 0.1
+shader_parameter/timescale = 1.0
+shader_parameter/waterdeep = 0.3
+shader_parameter/WATER_COL = Color(0.04, 0.08, 0.08, 1)
+shader_parameter/WATER2_COL = Color(0.04, 0.05, 0.08, 1)
+shader_parameter/FOAM_COL = Color(0.0125, 0.0609, 0.0648, 1)
+shader_parameter/parallax_strength = 0.001
+shader_parameter/parallax_offset = Vector2(0, 0)
+shader_parameter/parallax_auto = Vector2(0, 0)

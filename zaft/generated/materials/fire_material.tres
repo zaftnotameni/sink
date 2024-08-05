@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/fire.gdshader" id="1_62xek"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_62xek")
+shader_parameter/brighter_color = Color(0.2, 0.1, 0.2, 1)
+shader_parameter/middle_color = Color(1, 0.56, 0, 1)
+shader_parameter/darker_color = Color(0.64, 0.2, 0.05, 1)
+shader_parameter/spread = 0.5

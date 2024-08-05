@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/firey.gdshader" id="1_t1klr"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_t1klr")
+shader_parameter/color1 = null
+shader_parameter/color2 = null
+shader_parameter/brightness = 0.0
+shader_parameter/timeOffset = 0.0
+shader_parameter/timeRate = 1.0
+shader_parameter/noiseAmmount = 0.1
+shader_parameter/offsetX = 0.0
+shader_parameter/flickerT = 0.6

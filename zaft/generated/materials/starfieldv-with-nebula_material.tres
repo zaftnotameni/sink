@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/starfieldv-with-nebula.gdshader" id="1_v08tg"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_v08tg")
+shader_parameter/mouse = null
+shader_parameter/time = null
+shader_parameter/parallax_offset = Vector2(0, 0)
+shader_parameter/parallax_strength = Vector2(0, 0)
+shader_parameter/speed2 = 0.2

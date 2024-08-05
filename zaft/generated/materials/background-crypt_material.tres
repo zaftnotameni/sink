@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/background-crypt.gdshader" id="1_ke3ih"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_ke3ih")
+shader_parameter/size = 32.0
+shader_parameter/thickness = 0.08
+shader_parameter/symmetry = 1.0
+shader_parameter/ratio = Vector2(0.5, 1)
+shader_parameter/brick_color = Color(0.18, 0.09, 0.17, 0.5)
+shader_parameter/mortar_color = Color(0.55, 0.55, 0.55, 0.05)
+shader_parameter/rough_amount = 1.0
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/parallax_strength = 0.001
+shader_parameter/parallax_offset = Vector2(0, 0)

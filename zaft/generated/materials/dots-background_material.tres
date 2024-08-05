@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/dots-background.gdshader" id="1_2ieu5"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_2ieu5")
+shader_parameter/background_color = Color(0, 0, 0, 0)
+shader_parameter/line_color = Color(0, 1, 1, 1)
+shader_parameter/offset = Vector2(8, 4)

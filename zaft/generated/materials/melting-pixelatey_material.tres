@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/melting-pixelatey.gdshader" id="1_ctcmg"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_ctcmg")
+shader_parameter/progress = 0.0
+shader_parameter/meltiness = 1.0

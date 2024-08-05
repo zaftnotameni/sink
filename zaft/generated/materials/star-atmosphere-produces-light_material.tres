@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/star-atmosphere-produces-light.gdshader" id="1_0g2i0"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_0g2i0")
+shader_parameter/radius = 0.8
+shader_parameter/ar = 1.7777

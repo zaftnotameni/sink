@@ -3,10 +3,16 @@ extends EditorPlugin
 
 func _enter_tree() -> void:
 	print_verbose('=> activating z-project-configuration')
+	print_verbose('=> setting up project metadata')
 	setup_default_project_metadata()
+	print_verbose('=> setup up project metadata')
+	print_verbose('=> setting up project settings')
 	setup_default_project_settings()
+	print_verbose('=> setup up project settings')
+	print_verbose('=> setting up input actions')
 	setup_default_input_actions()
-
+	print_verbose('=> setup up input actions')
+	print_verbose('=> activated z-project-configuration')
 
 func _exit_tree() -> void:
 	print_verbose('=> deactivating z-project-configuration')
@@ -51,7 +57,6 @@ func setup_default_project_metadata():
 	editor_settings.set_project_metadata('color_picker', 'presets', preset_colors)
 
 func setup_default_project_settings():
-	if not OS.is_debug_build(): return
 	var folder_colors := {
 		"res://addons/": "gray",
 		"res://zaft/game/": "purple",
@@ -89,10 +94,8 @@ func setup_default_project_settings():
 		if different: ProjectSettings.set_setting(key, new_val)
 		return changed or different, false):
 		ProjectSettings.save()
-	
 
 func setup_default_input_actions():
-	if not OS.is_debug_build(): return
 	var input_actions := [
 		'pause',
 		'unpause',
@@ -108,5 +111,16 @@ func setup_default_input_actions():
 		'player-roll',
 		'player-attack',
 	]
+	var project_settings = {}
 	for input_action in input_actions:
-		if not InputMap.has_action(input_action): InputMap.add_action(input_action)
+		if not InputMap.has_action(input_action):
+			project_settings['input/' + input_action] = { 'deadzone': 0.5, 'events': [] }
+	print(project_settings)
+	if project_settings.keys().reduce(func (changed, key):
+		var new_val = project_settings.get(key)
+		var old_val = ProjectSettings.get_setting(key)
+		var different : bool = new_val != old_val
+		if new_val is Color and old_val is Color: different = new_val.to_html() != old_val.to_html()
+		if different: ProjectSettings.set_setting(key, new_val)
+		return changed or different, false):
+		ProjectSettings.save()

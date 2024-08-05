@@ -58,6 +58,61 @@ folder_colors={
 "res://zaft/test/": "pink"
 }
 
+[input]
+
+pause={
+"deadzone": 0.5,
+"events": []
+}
+unpause={
+"deadzone": 0.5,
+"events": []
+}
+menu-close={
+"deadzone": 0.5,
+"events": []
+}
+menu-accept={
+"deadzone": 0.5,
+"events": []
+}
+menu-back={
+"deadzone": 0.5,
+"events": []
+}
+player-up={
+"deadzone": 0.5,
+"events": []
+}
+player-down={
+"deadzone": 0.5,
+"events": []
+}
+player-left={
+"deadzone": 0.5,
+"events": []
+}
+player-right={
+"deadzone": 0.5,
+"events": []
+}
+player-jump={
+"deadzone": 0.5,
+"events": []
+}
+player-dash={
+"deadzone": 0.5,
+"events": []
+}
+player-roll={
+"deadzone": 0.5,
+"events": []
+}
+player-attack={
+"deadzone": 0.5,
+"events": []
+}
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://zaft/lib/shader/starfield.gdshader" id="1_hm2gf"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_hm2gf")
+shader_parameter/parallax_offset = Vector2(0, 0)
