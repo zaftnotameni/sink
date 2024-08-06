@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvgyw67f0gahk"]
+
+[ext_resource type="Script" path="res://zaft/lib/spawner/scripts/simple-spawner.gd" id="1_ofj7l"]
+[ext_resource type="PackedScene" uid="uid://cgkddfi3jmecw" path="res://zaft/template/title-screen/scenes/template-scene-title-screen.tscn" id="2_a5pg4"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Z_SimpleSpawner" type="Node2D" parent="."]
+script = ExtResource("1_ofj7l")
+spawn_on_ready = true
+free_on_exit = true
+spawn_mode = 1
+scene_to_spawn = ExtResource("2_a5pg4")
+layer = 14
