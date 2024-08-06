@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://cdtw5u1pgc8hb"]
+[gd_scene load_steps=3 format=3 uid="uid://cdtw5u1pgc8hb"]
+
+[ext_resource type="Script" path="res://zaft/lib/camera/scripts/follow-camera.gd" id="1_6va8k"]
+[ext_resource type="Script" path="res://zaft/lib/camera/scripts/camera-shake.gd" id="2_5k8i1"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Z_FollowCamera" type="Camera2D" parent="."]
+script = ExtResource("1_6va8k")
+
+[node name="Z_CameraShake" type="Node" parent="Z_FollowCamera"]
+script = ExtResource("2_5k8i1")
