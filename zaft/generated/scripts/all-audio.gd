@@ -1,4 +1,6 @@
 class_name Gen_AllAudio extends Node
+const AUDIO_BUTTON_FOCUS_IN : AudioStream = preload("res://zaft/lib/asset/audio/ui/button-focus-in.ogg")
+const AUDIO_BUTTON_PRESS : AudioStream = preload("res://zaft/lib/asset/audio/ui/button-press.ogg")
 const AUDIO_TICK001 : AudioStream = preload("res://zaft/lib/asset/audio/ui/tick_001.ogg")
 const AUDIO_TICK002 : AudioStream = preload("res://zaft/lib/asset/audio/ui/tick_002.ogg")
 const AUDIO_TOGGLE001 : AudioStream = preload("res://zaft/lib/asset/audio/ui/toggle_001.ogg")
@@ -10,4 +12,4 @@ const AUDIO_JUMP : AudioStream = preload("res://zaft/lib/player/audio/jump.mp3")
 const AUDIO_LAND : AudioStream = preload("res://zaft/lib/player/audio/land.mp3")
 const AUDIO_RESPAWN : AudioStream = preload("res://zaft/lib/spawner/audio/respawn.wav")
 
-var ALL_AUDIO := [AUDIO_TICK001,AUDIO_TICK002,AUDIO_TOGGLE001,AUDIO_DASH,AUDIO_DENY,AUDIO_DIE,AUDIO_DIE2,AUDIO_JUMP,AUDIO_LAND,AUDIO_RESPAWN,]
+var ALL_AUDIO := [AUDIO_BUTTON_FOCUS_IN,AUDIO_BUTTON_PRESS,AUDIO_TICK001,AUDIO_TICK002,AUDIO_TOGGLE001,AUDIO_DASH,AUDIO_DENY,AUDIO_DIE,AUDIO_DIE2,AUDIO_JUMP,AUDIO_LAND,AUDIO_RESPAWN,]

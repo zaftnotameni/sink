@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bly34ekrqe1g0"]
+
+[ext_resource type="Script" path="res://zaft/test/supabase/supabase.gd" id="1_7fqb1"]
+
+[node name="Supabase" type="Node2D"]
+script = ExtResource("1_7fqb1")

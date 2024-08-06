@@ -71,13 +71,13 @@
 	"res://zaft/lib/input/scenes/controls-wasd.tscn",
 	"res://zaft/lib/leaderboard/scenes/leaderboard.tscn",
 	"res://zaft/lib/leaderboard/scenes/timer-ui.tscn",
-	"res://zaft/lib/menu/scenes/audio-options-menu.tscn",
-	"res://zaft/lib/menu/scenes/options-menu.tscn",
-	"res://zaft/lib/menu/scenes/title-screen-menu.tscn",
-	"res://zaft/lib/player/scenes/platformer-player-2d.tscn"
+	"res://zaft/lib/player/scenes/platformer-player-2d.tscn",
+	"res://zaft/template/title-screen/scenes/template-scene-title-screen.tscn"
 ]
 [b]Audio[/b]
 [
+	"res://zaft/lib/asset/audio/ui/button-focus-in.ogg",
+	"res://zaft/lib/asset/audio/ui/button-press.ogg",
 	"res://zaft/lib/asset/audio/ui/tick_001.ogg",
 	"res://zaft/lib/asset/audio/ui/tick_002.ogg",
 	"res://zaft/lib/asset/audio/ui/toggle_001.ogg",
