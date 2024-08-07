@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgkddfi3jmecw"]
+[gd_scene load_steps=9 format=3 uid="uid://cgkddfi3jmecw"]
 
 [ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/title-screen-menu.gd" id="1_r7jhs"]
 [ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/title-screen-button.gd" id="2_bxt2m"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/auto-focus.gd" id="4_5v3xh"]
 [ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/opens-menu-scene.gd" id="5_ex0ml"]
 [ext_resource type="PackedScene" uid="uid://dkouc0khlp4e5" path="res://zaft/template/title-screen/scenes/template-scene-about.tscn" id="6_m00qq"]
+[ext_resource type="PackedScene" uid="uid://b4ic2uy3lnxmy" path="res://zaft/lib/leaderboard/scenes/leaderboard.tscn" id="7_myhwk"]
 [ext_resource type="Script" path="res://zaft/lib/component/scripts/game-state-on-ready.gd" id="7_seed7"]
 
 [node name="TitleScreen" type="PanelContainer"]
@@ -52,6 +53,26 @@ plays_on_focus_enter = true
 script = ExtResource("3_sjvrh")
 named = &"ui_button_click"
 plays_on_pressed = true
+
+[node name="Z_TitleScreenButton4" type="Button" parent="Z_TitleScreenMenu"]
+layout_mode = 2
+text = "Leaderboard"
+script = ExtResource("2_bxt2m")
+
+[node name="Z_PlaySoundOnEvent" type="Node" parent="Z_TitleScreenMenu/Z_TitleScreenButton4"]
+script = ExtResource("3_sjvrh")
+named = &"ui_button_focus_in"
+plays_on_mouse_enter = true
+plays_on_focus_enter = true
+
+[node name="Z_PlaySoundOnEvent2" type="Node" parent="Z_TitleScreenMenu/Z_TitleScreenButton4"]
+script = ExtResource("3_sjvrh")
+named = &"ui_button_click"
+plays_on_pressed = true
+
+[node name="Z_OpensMenuScene" type="Node" parent="Z_TitleScreenMenu/Z_TitleScreenButton4"]
+script = ExtResource("5_ex0ml")
+scene = ExtResource("7_myhwk")
 
 [node name="Z_TitleScreenButton3" type="Button" parent="Z_TitleScreenMenu"]
 layout_mode = 2
