@@ -1,0 +1,116 @@
+[gd_scene load_steps=13 format=3 uid="uid://vt6myw4b0vin"]
+
+[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/full-screen-menu-background-panel.gd" id="1_xsmdc"]
+[ext_resource type="Script" path="res://zaft/lib/component/scripts/game-state-on-ready.gd" id="2_fgqpd"]
+[ext_resource type="Script" path="res://zaft/lib/menu/scripts/pause-scene-controller.gd" id="3_7naue"]
+[ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/pauses-game-on-ready.gd" id="3_hfg20"]
+[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/full-screen-menu-margin.gd" id="4_w7xv3"]
+[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/pause-screen-button.gd" id="5_cu6y0"]
+[ext_resource type="PackedScene" uid="uid://cc4pdlhbeovpo" path="res://zaft/lib/input/scenes/controls-table.tscn" id="5_d8vxl"]
+[ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/auto-focus.gd" id="6_sfpgb"]
+[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/audio-sliders-vbox.gd" id="6_u0cna"]
+[ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/play-sound-on-event.gd" id="7_ikljo"]
+[ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/button-unpauses.gd" id="8_48r0c"]
+[ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/button-quits-to-title.gd" id="9_ptt3r"]
+
+[node name="Pause" type="PanelContainer"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_xsmdc")
+
+[node name="Z_GameStateOnReady" type="Node" parent="."]
+script = ExtResource("2_fgqpd")
+game_state = 9
+
+[node name="Z_PausesGameOnReady" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("3_hfg20")
+
+[node name="Z_PauseSceneController" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("3_7naue")
+
+[node name="Z_FullScreenMenuMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+script = ExtResource("4_w7xv3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Z_FullScreenMenuMarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Z_FullScreenMenuMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Z_PauseScreenButton" type="Button" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Unpause"
+script = ExtResource("5_cu6y0")
+
+[node name="Z_AutoFocus" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Z_PauseScreenButton"]
+script = ExtResource("6_sfpgb")
+
+[node name="Z_PlaySoundOnEvent" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Z_PauseScreenButton"]
+script = ExtResource("7_ikljo")
+named = &"ui_button_focus_in"
+plays_on_mouse_enter = true
+plays_on_focus_enter = true
+
+[node name="Z_PlaySoundOnEvent2" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Z_PauseScreenButton"]
+script = ExtResource("7_ikljo")
+named = &"ui_button_click"
+plays_on_pressed = true
+
+[node name="Z_ButtonUnpauses" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Z_PauseScreenButton" node_paths=PackedStringArray("target")]
+script = ExtResource("8_48r0c")
+target = NodePath("..")
+
+[node name="Z_PauseScreenButton2" type="Button" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit To Title"
+script = ExtResource("5_cu6y0")
+
+[node name="Z_PlaySoundOnEvent" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Z_PauseScreenButton2"]
+script = ExtResource("7_ikljo")
+named = &"ui_button_focus_in"
+plays_on_mouse_enter = true
+plays_on_focus_enter = true
+
+[node name="Z_PlaySoundOnEvent2" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Z_PauseScreenButton2"]
+script = ExtResource("7_ikljo")
+named = &"ui_button_click"
+plays_on_pressed = true
+
+[node name="Z_ButtonQuitsToTitle" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Z_PauseScreenButton2" node_paths=PackedStringArray("target")]
+script = ExtResource("9_ptt3r")
+target = NodePath("..")
+
+[node name="VSeparator" type="VSeparator" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Z_AudioSliders_Node" type="VBoxContainer" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+script = ExtResource("6_u0cna")
+
+[node name="Controls" parent="Z_FullScreenMenuMarginContainer/VBoxContainer" instance=ExtResource("5_d8vxl")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
