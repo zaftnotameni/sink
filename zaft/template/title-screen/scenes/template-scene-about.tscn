@@ -1,33 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkouc0khlp4e5"]
+[gd_scene load_steps=7 format=3 uid="uid://dkouc0khlp4e5"]
 
 [ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/closer-button.gd" id="1_kjf1t"]
+[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/full-screen-menu-background-panel.gd" id="1_n3mrv"]
+[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/full-screen-menu-margin.gd" id="2_0p7ea"]
+[ext_resource type="Script" path="res://zaft/lib/component/scripts/game-state-on-ready.gd" id="2_n8k22"]
 [ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/play-sound-on-event.gd" id="3_lrwii"]
 [ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/auto-focus.gd" id="4_lbig8"]
 
 [node name="About" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_n3mrv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Z_GameStateOnReady" type="Node" parent="."]
+script = ExtResource("2_n8k22")
+game_state = 3
+
+[node name="Z_FullScreenMenuMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+script = ExtResource("2_0p7ea")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Z_FullScreenMenuMarginContainer"]
 layout_mode = 2
 
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer"]
+[node name="TextEdit" type="TextEdit" parent="Z_FullScreenMenuMarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "About"
 
-[node name="Z_CloserButton" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("target")]
+[node name="Z_CloserButton" type="Button" parent="Z_FullScreenMenuMarginContainer/VBoxContainer" node_paths=PackedStringArray("target")]
+process_mode = 3
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Close"
 script = ExtResource("1_kjf1t")
-target = NodePath("../..")
+target = NodePath("../../..")
 
-[node name="Z_AutoFocus" type="Node" parent="VBoxContainer/Z_CloserButton"]
+[node name="Z_AutoFocus" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/Z_CloserButton"]
 script = ExtResource("4_lbig8")
 
-[node name="Z_PlaySoundOnEvent" type="Node" parent="VBoxContainer/Z_CloserButton"]
+[node name="Z_PlaySoundOnEvent" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/Z_CloserButton"]
 script = ExtResource("3_lrwii")
 named = &"ui_button_focus_in"
 plays_on_mouse_enter = true
 plays_on_focus_enter = true
 
-[node name="Z_PlaySoundOnEvent2" type="Node" parent="VBoxContainer/Z_CloserButton"]
+[node name="Z_PlaySoundOnEvent2" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/Z_CloserButton"]
 script = ExtResource("3_lrwii")
 named = &"ui_button_click"
 plays_on_pressed = true
