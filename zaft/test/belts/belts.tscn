@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2yskmgmroqn4"]
+
+[ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/follows-mouse.gd" id="1_efnfp"]
+[ext_resource type="Script" path="res://zaft/test/belts/belt-placer.gd" id="1_fh28s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crxgf"]
+size = Vector2(32, 16)
+
+[node name="Belts" type="Node2D"]
+
+[node name="BeltPlacer" type="Line2D" parent="."]
+points = PackedVector2Array(-16, 0, 0, 0, 16, 0)
+width = 16.0
+default_color = Color(1, 0.647059, 0, 0.5)
+script = ExtResource("1_fh28s")
+
+[node name="Z_FollowsMouse" type="Node" parent="BeltPlacer" node_paths=PackedStringArray("target")]
+script = ExtResource("1_efnfp")
+target = NodePath("..")
+snap = Vector2(32, 32)
+
+[node name="@Area2D@51538" type="Area2D" parent="BeltPlacer"]
+metadata/belt_placer = true
+metadata/created_via_tool_script = true
+
+[node name="@CollisionShape2D@51539" type="CollisionShape2D" parent="BeltPlacer/@Area2D@51538"]
+shape = SubResource("RectangleShape2D_crxgf")
+metadata/created_via_tool_script = true
