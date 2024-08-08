@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvgyw67f0gahk"]
+
+[ext_resource type="Script" path="res://zaft/lib/spawner/scripts/simple-spawner.gd" id="1_ofj7l"]
+[ext_resource type="PackedScene" uid="uid://cgkddfi3jmecw" path="res://zaft/template/menu/scenes/template-scene-title-screen.tscn" id="2_a5pg4"]
+[ext_resource type="Script" path="res://zaft/lib/util/scripts/shader-loader.gd" id="3_m1ne3"]
+[ext_resource type="Script" path="res://zaft/lib/mouse/scripts/area-follows-mouse.gd" id="4_7gr8g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jmutj"]
+radius = 8.0
+
+[node name="Main" type="Node2D"]
+
+[node name="Z_SimpleSpawner" type="Node2D" parent="."]
+script = ExtResource("1_ofj7l")
+spawn_on_ready = true
+free_on_exit = true
+spawn_mode = 1
+scene_to_spawn = ExtResource("2_a5pg4")
+layer = 14
+
+[node name="Z_ShaderLoader" type="FlowContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_m1ne3")
+
+[node name="Z_AreaFollowsMouse" type="Area2D" parent="."]
+script = ExtResource("4_7gr8g")
+
+[node name="@CollisionShape2D@36668" type="CollisionShape2D" parent="Z_AreaFollowsMouse"]
+shape = SubResource("CircleShape2D_jmutj")
+metadata/created_via_tool_script = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)

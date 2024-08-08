@@ -158,9 +158,11 @@
 	"res://zaft/lib/leaderboard/scenes/leaderboard.tscn",
 	"res://zaft/lib/leaderboard/scenes/timer-ui.tscn",
 	"res://zaft/lib/player/scenes/platformer-player-2d.tscn",
-	"res://zaft/template/title-screen/scenes/template-scene-about.tscn",
-	"res://zaft/template/title-screen/scenes/template-scene-main.tscn",
-	"res://zaft/template/title-screen/scenes/template-scene-title-screen.tscn"
+	"res://zaft/template/main/scenes/template-scene-main.tscn",
+	"res://zaft/template/menu/scenes/template-scene-about.tscn",
+	"res://zaft/template/menu/scenes/template-scene-options.tscn",
+	"res://zaft/template/menu/scenes/template-scene-pause.tscn",
+	"res://zaft/template/menu/scenes/template-scene-title-screen.tscn"
 ]
 [b]Audio[/b]
 [

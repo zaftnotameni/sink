@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdtw5u1pgc8hb"]
 
-[ext_resource type="PackedScene" uid="uid://dvgyw67f0gahk" path="res://zaft/template/title-screen/scenes/template-scene-main.tscn" id="1_4n3xm"]
+[ext_resource type="PackedScene" uid="uid://dvgyw67f0gahk" path="res://zaft/template/main/scenes/template-scene-main.tscn" id="1_4n3xm"]
 
 [node name="Main" type="Node2D"]
 

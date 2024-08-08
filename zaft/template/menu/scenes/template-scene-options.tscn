@@ -1,20 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkouc0khlp4e5"]
+[gd_scene load_steps=8 format=3 uid="uid://du4knnhj5w5ty"]
 
-[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/closer-button.gd" id="1_kjf1t"]
-[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/full-screen-menu-background-panel.gd" id="1_n3mrv"]
-[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/full-screen-menu-margin.gd" id="2_0p7ea"]
-[ext_resource type="Script" path="res://zaft/lib/component/scripts/game-state-on-ready.gd" id="2_n8k22"]
-[ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/play-sound-on-event.gd" id="3_lrwii"]
-[ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/auto-focus.gd" id="4_lbig8"]
+[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/full-screen-menu-background-panel.gd" id="1_4es72"]
+[ext_resource type="Script" path="res://zaft/lib/component/scripts/game-state-on-ready.gd" id="2_ali50"]
+[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/full-screen-menu-margin.gd" id="3_84yap"]
+[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/closer-button.gd" id="4_ann8h"]
+[ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/auto-focus.gd" id="5_1uxw3"]
+[ext_resource type="Script" path="res://zaft/lib/child-labor/scripts/play-sound-on-event.gd" id="6_7wn7l"]
+[ext_resource type="Script" path="res://zaft/lib/menu/scripts/controls/audio-sliders-vbox.gd" id="7_upuup"]
 
-[node name="About" type="PanelContainer"]
+[node name="Options" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource("1_n3mrv")
+script = ExtResource("1_4es72")
 
 [node name="Z_GameStateOnReady" type="Node" parent="."]
-script = ExtResource("2_n8k22")
+script = ExtResource("2_ali50")
 game_state = 3
 
 [node name="Z_FullScreenMenuMarginContainer" type="MarginContainer" parent="."]
@@ -23,33 +24,34 @@ theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
-script = ExtResource("2_0p7ea")
+script = ExtResource("3_84yap")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Z_FullScreenMenuMarginContainer"]
 layout_mode = 2
 
-[node name="TextEdit" type="TextEdit" parent="Z_FullScreenMenuMarginContainer/VBoxContainer"]
+[node name="Z_AudioSliders_Node" type="VBoxContainer" parent="Z_FullScreenMenuMarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "About"
+script = ExtResource("7_upuup")
 
 [node name="Z_CloserButton" type="Button" parent="Z_FullScreenMenuMarginContainer/VBoxContainer" node_paths=PackedStringArray("target")]
 process_mode = 3
 layout_mode = 2
+size_flags_vertical = 10
 theme_override_font_sizes/font_size = 32
 text = "Close"
-script = ExtResource("1_kjf1t")
+script = ExtResource("4_ann8h")
 target = NodePath("../../..")
 
 [node name="Z_AutoFocus" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/Z_CloserButton"]
-script = ExtResource("4_lbig8")
+script = ExtResource("5_1uxw3")
 
 [node name="Z_PlaySoundOnEvent" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/Z_CloserButton"]
-script = ExtResource("3_lrwii")
+script = ExtResource("6_7wn7l")
 named = &"ui_button_focus_in"
 plays_on_mouse_enter = true
 plays_on_focus_enter = true
 
 [node name="Z_PlaySoundOnEvent2" type="Node" parent="Z_FullScreenMenuMarginContainer/VBoxContainer/Z_CloserButton"]
-script = ExtResource("3_lrwii")
+script = ExtResource("6_7wn7l")
 named = &"ui_button_click"
 plays_on_pressed = true
