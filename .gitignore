@@ -3,6 +3,7 @@
 /exports/lin/
 
 *.env
+*_secrets.tres
 
 # Godot 4+ specific ignores
 *.tmp*
